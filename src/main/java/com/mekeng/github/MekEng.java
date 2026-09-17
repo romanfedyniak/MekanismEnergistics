@@ -1,29 +1,29 @@
 package com.mekeng.github;
 
-import appeng.api.config.TunnelType;
-import com.mekeng.github.proxy.CommonProxy;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
 
-@Mod(modid = MekEng.MODID, name = "Mekanism Energistics", useMetadata = true, dependencies = "required-after:appliedenergistics2@[v0.56.5,);required-after:mekanism")
+import com.mekeng.github.proxy.CommonProxy;
+
+@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, useMetadata = true,
+        dependencies = MekEng.DEPENDENCIES)
 public class MekEng {
 
-    public static final TunnelType GAS;
+    /**
+     * No version on AE2UD: the fork shares its mod id with AE2 and AE2UEL, and the version range that tells
+     * them apart waits for AE2UD's first release. See CHANGES.md.
+     */
+    static final String DEPENDENCIES = "required-after:appliedenergistics2;required-after:mekanism;after:jei";
 
-    static {
-        // add P2P type
-        GAS = EnumHelper.addEnum(TunnelType.class, "GAS", new Class[0]);
-    }
+    public static final String MODID = Tags.MOD_ID;
 
-    public static final String MODID = "mekeng";
-
-    @Mod.Instance(MODID)
+    @Mod.Instance(Tags.MOD_ID)
     public static MekEng INSTANCE;
 
     @SidedProxy(clientSide = "com.mekeng.github.proxy.ClientProxy", serverSide = "com.mekeng.github.proxy.CommonProxy")
