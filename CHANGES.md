@@ -11,6 +11,12 @@ first appeared.
 
 ## Unreleased
 
+- **Gas is a kind of content an ME network holds.** It is registered with AE2UD the way blocks and items are
+  registered with the game, so everything that was written to carry any kind of content carries gas without
+  knowing what gas is: the terminals list it, the key-type picker offers it, an amount of it is typed in
+  buckets or millibuckets like a fluid, and it is drawn with Mekanism's own icon and colour. A byte of a
+  storage cell holds 32 buckets of gas and a machine operation moves half a bucket - the original mod's
+  numbers, so nothing that was stored before the move stops fitting.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**
   The original is built on AE2 UEL, where every kind of content needs a storage channel and a part of its own,
   and it carried a gas copy of almost the whole mod. AE2UD has one terminal, one set of buses and one
