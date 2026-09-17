@@ -17,6 +17,11 @@ first appeared.
   buckets or millibuckets like a fluid, and it is drawn with Mekanism's own icon and colour. A byte of a
   storage cell holds 32 buckets of gas and a machine operation moves half a bucket - the original mod's
   numbers, so nothing that was stored before the move stops fitting.
+- **The buses and storage buses of AE2UD move gas.** An import bus pulls gas out of the tank it faces, an
+  export bus and an interface push gas into one, and a storage bus mounts a tank as network storage, telling
+  the network what changed in it rather than counting it again. None of those parts knows what gas is: each
+  kind of content registers how it is moved, and this registers gas. A tank holding several gases is asked
+  for the one that is wanted, instead of being left to hand over whichever it likes.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**
   The original is built on AE2 UEL, where every kind of content needs a storage channel and a part of its own,
   and it carried a gas copy of almost the whole mod. AE2UD has one terminal, one set of buses and one

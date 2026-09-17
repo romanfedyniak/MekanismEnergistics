@@ -9,12 +9,18 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
+import appeng.api.behaviors.ExternalStorageStrategy;
+import appeng.api.behaviors.StackExportStrategy;
+import appeng.api.behaviors.StackImportStrategy;
 import appeng.api.stacks.AEKeyType;
 
 import com.mekeng.github.MekEng;
 import com.mekeng.github.common.ItemAndBlocks;
 import com.mekeng.github.common.RegistryHandler;
 import com.mekeng.github.common.me.AEGasKeyType;
+import com.mekeng.github.common.me.strategy.GasExportStrategy;
+import com.mekeng.github.common.me.strategy.GasHandlerAdapter;
+import com.mekeng.github.common.me.strategy.GasImportStrategy;
 
 public class CommonProxy {
 
@@ -42,6 +48,11 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent event) {
         regHandler.onInit();
+
+        // With these three, the buses, storage buses and interfaces AE2UD already ships carry gas.
+        StackImportStrategy.register(AEGasKeyType.INSTANCE, GasImportStrategy::create);
+        StackExportStrategy.register(AEGasKeyType.INSTANCE, GasExportStrategy::create);
+        ExternalStorageStrategy.register(AEGasKeyType.INSTANCE, GasHandlerAdapter.Strategy::new);
     }
 
     public void postInit(FMLPostInitializationEvent event) {
