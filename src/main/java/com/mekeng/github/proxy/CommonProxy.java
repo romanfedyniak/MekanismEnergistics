@@ -23,6 +23,8 @@ import appeng.api.behaviors.StackImportStrategy;
 import appeng.api.config.TunnelType;
 import appeng.api.features.IP2PTunnelRegistry;
 import appeng.api.stacks.AEKeyType;
+import appeng.api.upgrades.CardTraits;
+import appeng.api.upgrades.IUpgradeRegistry;
 
 import com.mekeng.github.MekEng;
 import com.mekeng.github.common.ItemAndBlocks;
@@ -124,6 +126,16 @@ public class CommonProxy {
     }
 
     public void postInit(FMLPostInitializationEvent event) {
+        // The cards and charge rate AE2UD gives its own portable fluid cells.
+        final IUpgradeRegistry upgrades = AEApi.instance().registries().upgrades();
+        for (final Item cell : ItemAndBlocks.PORTABLE_GAS_CELLS) {
+            final ItemStack stack = new ItemStack(cell);
+            upgrades.addTraitSupport(CardTraits.INVERTER, stack, 1);
+            upgrades.addTraitSupport(CardTraits.EQUAL_DISTRIBUTION, stack, 1);
+            upgrades.addTraitSupport(CardTraits.ENERGY, stack, 2);
+            upgrades.addTraitSupport(CardTraits.VOID, stack, 1);
+            AEApi.instance().registries().charger().addChargeRate(cell, 800d);
+        }
     }
 
 }

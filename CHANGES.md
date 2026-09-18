@@ -44,6 +44,12 @@ first appeared.
   like its own. The 1k to 64k cells keep the original mod's item ids and textures; the larger ones and the
   housing are drawn from AE2UD's fluid ones in the same colours. The original mod's gas storage components are
   no longer crafted.
+- **Portable gas cells from 1k to 16384k.** They are AE2UD's portable cell holding gas: the same window, the
+  same five types and the same share of what a storage cell of the tier holds as a portable fluid cell, the
+  same cards and the same charge rate, crafted from an ME Chest, a storage component, an Energy Cell and a gas
+  cell housing. A tier is there when AE2UD's portable fluid cell of that tier is. The 1k keeps the original
+  mod's item id, `mekeng:portable_gas_cell`; its texture is drawn again with the others from AE2UD's portable
+  fluid cells, so it now shows its tier like they do.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.
