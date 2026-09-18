@@ -28,6 +28,10 @@ first appeared.
   same as a fluid slot. A tube of the original Mekanism or CE takes the interface's first gas, as it does from
   any tank holding several, so an interface meant for tubes should stock one gas. Under Mekanism CEu a tube
   asks for the gas it is already carrying and gets it from whichever slot holds it.
+- **A gas tank item works like a bucket.** Clicked on a gas in a terminal it fills, clicked on the terminal
+  it empties into the network, and clicked on a filter slot it sets the filter to the gas it holds - or, with
+  the right button, to the tank itself. One click fills or empties the whole tank, as in the original mod,
+  rather than the tank's own transfer rate at a time; a creative tank gives without end.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.

@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 import mekanism.common.capabilities.Capabilities;
 
+import appeng.api.behaviors.ContainerItemStrategy;
 import appeng.api.behaviors.ExternalStorageStrategy;
 import appeng.api.behaviors.GenericInventoryAdapters;
 import appeng.api.behaviors.GenericSlotCapacities;
@@ -25,6 +26,7 @@ import com.mekeng.github.common.me.AEGasKey;
 import com.mekeng.github.common.me.AEGasKeyType;
 import com.mekeng.github.common.me.inventory.CeuGenericStackGasHandler;
 import com.mekeng.github.common.me.inventory.GenericStackGasHandler;
+import com.mekeng.github.common.me.strategy.GasContainerItemStrategy;
 import com.mekeng.github.common.me.strategy.GasExportStrategy;
 import com.mekeng.github.common.me.strategy.GasHandlerAdapter;
 import com.mekeng.github.common.me.strategy.GasImportStrategy;
@@ -60,6 +62,9 @@ public class CommonProxy {
         StackImportStrategy.register(AEGasKeyType.INSTANCE, GasImportStrategy::create);
         StackExportStrategy.register(AEGasKeyType.INSTANCE, GasExportStrategy::create);
         ExternalStorageStrategy.register(AEGasKeyType.INSTANCE, GasHandlerAdapter.Strategy::new);
+
+        // A gas tank item fills and empties against a terminal row or a filter slot like a bucket.
+        ContainerItemStrategy.register(AEGasKeyType.INSTANCE, new GasContainerItemStrategy());
 
         // An interface's gas slots hold what its fluid slots do; the interface multiplies both alike.
         GenericSlotCapacities.register(AEGasKeyType.INSTANCE, 4L * AEGasKey.AMOUNT_BUCKET);
