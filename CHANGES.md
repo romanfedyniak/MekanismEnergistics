@@ -28,6 +28,9 @@ first appeared.
   same as a fluid slot. A tube of the original Mekanism or CE takes the interface's first gas, as it does from
   any tank holding several, so an interface meant for tubes should stock one gas. Under Mekanism CEu a tube
   asks for the gas it is already carrying and gets it from whichever slot holds it.
+- **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
+  a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
+  that uses a gas carries it into a processing pattern.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**
   The original is built on AE2 UEL, where every kind of content needs a storage channel and a part of its own,
   and it carried a gas copy of almost the whole mod. AE2UD has one terminal, one set of buses and one

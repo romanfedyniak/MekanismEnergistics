@@ -5,7 +5,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import appeng.api.client.AEKeyRendering;
+import appeng.api.integrations.hei.IngredientConverters;
 
+import com.mekeng.github.client.hei.GasIngredientConverter;
 import com.mekeng.github.client.render.GasKeyRenderHandler;
 import com.mekeng.github.common.me.AEGasKeyType;
 
@@ -20,6 +22,7 @@ public class ClientProxy extends CommonProxy {
     public void init(FMLInitializationEvent event) {
         super.init(event);
         AEKeyRendering.register(AEGasKeyType.INSTANCE, new GasKeyRenderHandler());
+        IngredientConverters.register(new GasIngredientConverter());
     }
 
     @Override
