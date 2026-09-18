@@ -5,6 +5,10 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # one Mekanism breaking must not hide whether the others build
+      matrix:
+        mekanism: [original, ce, ceu]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -19,8 +23,9 @@ jobs:
         with:
           add-job-summary: never
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build -Pmekanism_flavour=${{ matrix.mekanism }}
       - name: Upload Artifact
+        if: matrix.mekanism == 'ce' # the release is built against ce; the other two only check that it compiles
         uses: actions/upload-artifact@v7
         with:
           name: MekanismEnergistics

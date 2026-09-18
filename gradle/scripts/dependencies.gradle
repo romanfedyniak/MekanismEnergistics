@@ -39,6 +39,26 @@ repositories {
     mavenLocal() // Must be last for caching to work
 }
 
+// The mod supports all three Mekanisms; CI builds against each, releases are built against ce.
+ext.MEKANISM_FLAVOURS = [
+        original: 'curse.maven:mekanism-268560:2835175',              // 9.8.3.390
+        ce      : 'curse.maven:mekanism-ce-399904:5351260',           // 9.12.10
+        ceu     : 'curse.maven:mekanism-ce-unofficial-840735:8862568' // 10.0.5.021
+]
+if (!MEKANISM_FLAVOURS.containsKey(propertyString('mekanism_flavour'))) {
+    throw new GradleException("mekanism_flavour must be one of ${MEKANISM_FLAVOURS.keySet()}")
+}
+
+// A world saved under one Mekanism must not be opened under another, so the other two run elsewhere.
+if (propertyString('mekanism_flavour') != 'ce') {
+    ['runClient', 'runServer'].each { taskName ->
+        tasks.named(taskName, JavaExec).configure { task ->
+            task.workingDir = file("run/${propertyString('mekanism_flavour')}")
+            task.doFirst { task.workingDir.mkdirs() }
+        }
+    }
+}
+
 configurations {
     shade
     implementation.extendsFrom shade
@@ -51,9 +71,7 @@ dependencies {
     runtimeOnly 'com.cleanroommc:osxnarratorblocker:1.0'
 
     implementation rfg.deobf('com.github.romanfedyniak:AE2UD:e5aafec74f')
-    // Mekanism Community Edition 9.12.10. The code only touches mekanism.api, which the original Mekanism
-    // and Mekanism CEu carry as well, so one of the three is enough to build against.
-    implementation rfg.deobf('curse.maven:mekanism-ce-399904:5351260')
+    implementation rfg.deobf(MEKANISM_FLAVOURS[propertyString('mekanism_flavour')])
     implementation 'mezz:jei:4.34.0'
     // Baubles and Mouse Tweaks used to be copied into src/api; they are dependencies instead, because
     // neither is under this mod's license.

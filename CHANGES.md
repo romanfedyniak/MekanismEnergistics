@@ -30,6 +30,9 @@ first appeared.
 - **The build is the same as the other AE2UD addons'.** CleanroomMC's ForgeDevEnv, the version read from the
   latest `vX.Y.Z` git tag, a build on every push and jars published to GitHub Releases on a tag. The jar is
   called `mekeng-ud`, so it cannot be mistaken for the mod it was forked from.
+- **Every push is compiled against all three Mekanisms.** The original, CE and CEu each get a build, so a
+  change that only one of them cannot load fails there rather than in a game. One switch in
+  `gradle.properties` picks which of them the game runs with during development.
 - **The coremod is gone.** Of its three patches, two are no longer needed - AE2UD's ME Chest opens one
   terminal for every kind of content, and its P2P registry lets a tunnel type be registered - and the third,
   which lets a Mekanism tube ask for the gas it is actually carrying, becomes a mixin.

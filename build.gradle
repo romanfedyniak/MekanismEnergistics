@@ -275,8 +275,24 @@ idea {
                 "1. Run Client"(Gradle) {
                     taskNames = ["runClient"]
                 }
+                "1. Run Client (Original)"(Gradle) {
+                    taskNames = ["runClient"]
+                    scriptParameters = "-Pmekanism_flavour=original"
+                }
+                "1. Run Client (CEu)"(Gradle) {
+                    taskNames = ["runClient"]
+                    scriptParameters = "-Pmekanism_flavour=ceu"
+                }
                 "2. Run Server"(Gradle) {
                     taskNames = ["runServer"]
+                }
+                "2. Run Server (Original)"(Gradle) {
+                    taskNames = ["runServer"]
+                    scriptParameters = "-Pmekanism_flavour=original"
+                }
+                "2. Run Server (CEu)"(Gradle) {
+                    taskNames = ["runServer"]
+                    scriptParameters = "-Pmekanism_flavour=ceu"
                 }
                 "3. Run Obfuscated Client"(Gradle) {
                     taskNames = ["runObfClient"]

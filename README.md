@@ -11,7 +11,15 @@ key type, and the parts that are already there carry it: the terminal lists gase
 a storage bus mounts a gas tank, an interface stocks them, a pattern may hold them. What it adds of its own
 is what has no counterpart: gas cells, portable gas cells and a gas P2P tunnel.
 
-Mekanism, Mekanism CE and Mekanism CEu are all supported. Builds are made against Mekanism CE.
+Mekanism, Mekanism CE and Mekanism CEu are all supported. Releases are built against Mekanism CE, and every
+push is also compiled against the other two.
+
+## Building
+
+`mekanism_flavour` in `gradle.properties` picks the Mekanism to build and run against: `original`, `ce` (the
+default) or `ceu`. Pass `-Pmekanism_flavour=ceu` to override it for one run; IntelliJ IDEA gets a client and
+a server run configuration for each. `original` and `ceu` run in `run/original` and `run/ceu`, so a world
+saved under one Mekanism is never opened under another.
 
 ## Compatibility
 
