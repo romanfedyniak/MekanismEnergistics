@@ -1,0 +1,30 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:quartz_glass"
+        }
+    ],
+    "result": {
+        "item": "mekeng:gas_cell_housing"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba",
+        "b b",
+        "ccc"
+    ],
+    "key": {
+        "a": {
+            "item": "appliedenergistics2:quartz_glass"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "ingotOsmium"
+        },
+        "c": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        }
+    }
+}

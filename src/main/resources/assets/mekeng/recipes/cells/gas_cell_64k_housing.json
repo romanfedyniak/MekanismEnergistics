@@ -1,0 +1,30 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "mekeng:gas_cell_64k"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell64k_part"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "mekeng:gas_cell_64k"
+    },
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+        {
+            "item": "mekeng:gas_cell_housing"
+        },
+        {
+            "type": "appliedenergistics2:part",
+            "part": "material.cell64k_part"
+        }
+    ]
+}

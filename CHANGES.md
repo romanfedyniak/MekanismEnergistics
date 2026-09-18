@@ -36,6 +36,14 @@ first appeared.
   neighbour takes, as the fluid tunnel does with fluids; nothing is drawn back through it. A tunnel is attuned
   to gas with a pressurized tube of any tier, a gas tank, a jetpack, a scuba tank, a flamethrower or a gauge
   dropper. It keeps the original mod's item id, `mekeng:gas_p2p`.
+- **Gas storage cells from 1k to 16384k.** A cell is AE2UD's universal storage component in a gas cell
+  housing, crafted like a fluid housing with osmium in place of lapis, and is put together either from the two
+  or in one shaped recipe. An empty cell comes apart in hand or alone in a crafting grid, back into its
+  component and housing. Bytes per type and idle drain match AE2UD's fluid cells, and each cell holds 15 gases,
+  as the original mod's did. The 256k and larger cells are there only when AE2UD's high capacity storage is,
+  like its own. The 1k to 64k cells keep the original mod's item ids and textures; the larger ones and the
+  housing are drawn from AE2UD's fluid ones in the same colours. The original mod's gas storage components are
+  no longer crafted.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.
