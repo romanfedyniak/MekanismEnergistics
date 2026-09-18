@@ -21,6 +21,7 @@ item.mekeng:gas_interface_terminal.name=Gas Interface Configuration Terminal
 item.mekeng:wireless_gas_terminal.name=Wireless Gas Terminal
 item.mekeng:gas_storage_monitor.name=ME Gas Storage Monitor
 item.mekeng:gas_conversion_monitor.name=ME Gas Conversion Monitor
+item.mekeng:gas_p2p.name=P2P Tunnel - Gas
 
 tile.mekeng:gas_interface.name=ME Gas Interface
 

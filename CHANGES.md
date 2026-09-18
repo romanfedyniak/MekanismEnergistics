@@ -32,6 +32,10 @@ first appeared.
   it empties into the network, and clicked on a filter slot it sets the filter to the gas it holds - or, with
   the right button, to the tank itself. One click fills or empties the whole tank, as in the original mod,
   rather than the tank's own transfer rate at a time; a creative tank gives without end.
+- **A P2P tunnel carries gas.** Gas pushed into its input comes out of every output, split by how much each
+  neighbour takes, as the fluid tunnel does with fluids; nothing is drawn back through it. A tunnel is attuned
+  to gas with a pressurized tube of any tier, a gas tank, a jetpack, a scuba tank, a flamethrower or a gauge
+  dropper. It keeps the original mod's item id, `mekeng:gas_p2p`.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.

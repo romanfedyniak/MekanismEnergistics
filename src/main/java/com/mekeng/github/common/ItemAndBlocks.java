@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import mekanism.common.MekanismBlocks;
 
 import com.mekeng.github.MekEng;
+import com.mekeng.github.common.item.ItemGasP2P;
 
 public class ItemAndBlocks {
 
@@ -19,7 +20,10 @@ public class ItemAndBlocks {
         }
     };
 
+    public static ItemGasP2P GAS_P2P;
+
     public static void init(RegistryHandler regHandler) {
+        regHandler.item("gas_p2p", GAS_P2P = new ItemGasP2P());
     }
 
 }
