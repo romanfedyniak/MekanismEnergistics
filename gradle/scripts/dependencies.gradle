@@ -49,6 +49,18 @@ if (!MEKANISM_FLAVOURS.containsKey(propertyString('mekanism_flavour'))) {
     throw new GradleException("mekanism_flavour must be one of ${MEKANISM_FLAVOURS.keySet()}")
 }
 
+// CeuGenericStackGasHandler implements CEu's own gas interface; outside ceu it compiles against copies of
+// its signatures, which never reach the jar or the game.
+sourceSets {
+    ceuStubs {
+        compileClasspath = configurations.compileClasspath
+        annotationProcessorPath = configurations.annotationProcessor // Jabel, as for main
+    }
+}
+if (propertyString('mekanism_flavour') != 'ceu') {
+    sourceSets.main.compileClasspath += sourceSets.ceuStubs.output
+}
+
 // A world saved under one Mekanism must not be opened under another, so the other two run elsewhere.
 if (propertyString('mekanism_flavour') != 'ce') {
     ['runClient', 'runServer'].each { taskName ->

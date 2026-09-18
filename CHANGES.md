@@ -22,6 +22,12 @@ first appeared.
   the network what changed in it rather than counting it again. None of those parts knows what gas is: each
   kind of content registers how it is moved, and this registers gas. A tank holding several gases is asked
   for the one that is wanted, instead of being left to hand over whichever it likes.
+- **An AE2UD interface is a gas tank to Mekanism.** A tube or a machine next to an interface fills it and
+  draws from it like any other tank. Gas put in goes to the network first and only what the network refuses
+  stays in the interface; gas drawn out comes from the interface's own slots, which hold 32 buckets each, the
+  same as a fluid slot. A tube of the original Mekanism or CE takes the interface's first gas, as it does from
+  any tank holding several, so an interface meant for tubes should stock one gas. Under Mekanism CEu a tube
+  asks for the gas it is already carrying and gets it from whichever slot holds it.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**
   The original is built on AE2 UEL, where every kind of content needs a storage channel and a part of its own,
   and it carried a gas copy of almost the whole mod. AE2UD has one terminal, one set of buses and one
@@ -35,7 +41,7 @@ first appeared.
   `gradle.properties` picks which of them the game runs with during development.
 - **The coremod is gone.** Of its three patches, two are no longer needed - AE2UD's ME Chest opens one
   terminal for every kind of content, and its P2P registry lets a tunnel type be registered - and the third,
-  which lets a Mekanism tube ask for the gas it is actually carrying, becomes a mixin.
+  on Mekanism's tube, never changed which gas the tube got from this mod's own tanks, so it goes too.
 - **Baubles and Mouse Tweaks are no longer copied into this repository.** Their API files were part of the
   source tree; they are ordinary compile-time dependencies now.
 - **No version range on AE2UD yet.** AE2UD shares its mod id with AE2 and AE2 UEL, so only a version range
