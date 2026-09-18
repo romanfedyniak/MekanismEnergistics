@@ -53,6 +53,8 @@ first appeared.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.
+- **Ukrainian translation.** Every name the mod shows is in Ukrainian as well as English. The Japanese and
+  Chinese files keep only the names of items that still exist; the new ones show in English there.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**
   The original is built on AE2 UEL, where every kind of content needs a storage channel and a part of its own,
   and it carried a gas copy of almost the whole mod. AE2UD has one terminal, one set of buses and one

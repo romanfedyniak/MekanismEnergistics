@@ -1,6 +1,5 @@
 itemGroup.mekeng=Mekanism Energistics
 
-item.mekeng:gas_p2p.name=P2P-тунель - Гази
 item.mekeng:gas_cell_1k.name=§61к§r МЕ газова комірка зберігання
 item.mekeng:gas_cell_4k.name=§e4к§r МЕ газова комірка зберігання
 item.mekeng:gas_cell_16k.name=§a16к§r МЕ газова комірка зберігання
@@ -18,3 +17,4 @@ item.mekeng:portable_gas_cell_256k.name=§b256к§r переносна газо�
 item.mekeng:portable_gas_cell_1024k.name=§b1024к§r переносна газова комірка
 item.mekeng:portable_gas_cell_4096k.name=§b4096к§r переносна газова комірка
 item.mekeng:portable_gas_cell_16384k.name=§b16384к§r переносна газова комірка
+item.mekeng:gas_p2p.name=P2P-тунель — газ
