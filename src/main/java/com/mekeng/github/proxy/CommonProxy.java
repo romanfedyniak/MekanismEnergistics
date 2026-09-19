@@ -126,8 +126,16 @@ public class CommonProxy {
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-        // The cards and charge rate AE2UD gives its own portable fluid cells.
         final IUpgradeRegistry upgrades = AEApi.instance().registries().upgrades();
+        // The cards AE2UD gives its own fluid cells.
+        for (final Item cell : ItemAndBlocks.GAS_CELLS) {
+            final ItemStack stack = new ItemStack(cell);
+            upgrades.addTraitSupport(CardTraits.INVERTER, stack, 1);
+            upgrades.addTraitSupport(CardTraits.STICKY, stack, 1);
+            upgrades.addTraitSupport(CardTraits.EQUAL_DISTRIBUTION, stack, 1);
+            upgrades.addTraitSupport(CardTraits.VOID, stack, 1);
+        }
+        // The cards and charge rate AE2UD gives its own portable fluid cells.
         for (final Item cell : ItemAndBlocks.PORTABLE_GAS_CELLS) {
             final ItemStack stack = new ItemStack(cell);
             upgrades.addTraitSupport(CardTraits.INVERTER, stack, 1);
