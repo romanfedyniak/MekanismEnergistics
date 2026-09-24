@@ -28,6 +28,9 @@ first appeared.
   same as a fluid slot. A tube of the original Mekanism or CE takes the interface's first gas, as it does from
   any tank holding several, so an interface meant for tubes should stock one gas. Under Mekanism CEu a tube
   asks for the gas it is already carrying and gets it from whichever slot holds it.
+- **AE2UD's storage exposer hands out gas.** A tube or a machine next to the exposer draws any gas the
+  network holds, one tank for each gas, and puts nothing in. A tube of the original Mekanism or CE takes the
+  first gas, which is the one drawn from last; under Mekanism CEu a tube asks for the gas it carries.
 - **A gas tank item works like a bucket.** Clicked on a gas in a terminal it fills, clicked on the terminal
   it empties into the network, and clicked on a filter slot it sets the filter to the gas it holds - or, with
   the right button, to the tank itself. One click fills or empties the whole tank, as in the original mod,

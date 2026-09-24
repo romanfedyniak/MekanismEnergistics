@@ -15,6 +15,7 @@ import mekanism.common.capabilities.Capabilities;
 
 import appeng.api.AEApi;
 import appeng.api.behaviors.ContainerItemStrategy;
+import appeng.api.behaviors.ExposerStrategy;
 import appeng.api.behaviors.ExternalStorageStrategy;
 import appeng.api.behaviors.GenericInventoryAdapters;
 import appeng.api.behaviors.GenericSlotCapacities;
@@ -31,7 +32,9 @@ import com.mekeng.github.common.ItemAndBlocks;
 import com.mekeng.github.common.RegistryHandler;
 import com.mekeng.github.common.me.AEGasKey;
 import com.mekeng.github.common.me.AEGasKeyType;
+import com.mekeng.github.common.me.inventory.CeuGasExposerHandler;
 import com.mekeng.github.common.me.inventory.CeuGenericStackGasHandler;
+import com.mekeng.github.common.me.inventory.GasExposerHandler;
 import com.mekeng.github.common.me.inventory.GenericStackGasHandler;
 import com.mekeng.github.common.me.strategy.GasContainerItemStrategy;
 import com.mekeng.github.common.me.strategy.GasExportStrategy;
@@ -85,10 +88,14 @@ public class CommonProxy {
 
         // An interface's gas slots hold what its fluid slots do; the interface multiplies both alike.
         GenericSlotCapacities.register(AEGasKeyType.INSTANCE, 4L * AEGasKey.AMOUNT_BUCKET);
+
+        // An interface's gas slots, and the storage exposer handing the network's gas to tubes and machines.
         if (isMekanismCeu()) {
             GenericInventoryAdapters.register(Capabilities.GAS_HANDLER_CAPABILITY, CeuGenericStackGasHandler::new);
+            ExposerStrategy.register(AEGasKeyType.INSTANCE, Capabilities.GAS_HANDLER_CAPABILITY, CeuGasExposerHandler::new);
         } else {
             GenericInventoryAdapters.register(Capabilities.GAS_HANDLER_CAPABILITY, GenericStackGasHandler::new);
+            ExposerStrategy.register(AEGasKeyType.INSTANCE, Capabilities.GAS_HANDLER_CAPABILITY, GasExposerHandler::new);
         }
     }
 
