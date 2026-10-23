@@ -56,6 +56,12 @@ first appeared.
 - **Gas works with the recipe viewer.** A gas is dragged out of HEI into any filter slot - an interface's,
   a bus's, a storage bus's - pressing the recipe key over a gas in a terminal shows its recipes, and a recipe
   that uses a gas carries it into a processing pattern.
+- **A world saved with the original mod on AE2 UEL keeps its gas.** Gas cells and portable gas cells keep
+  what they hold, and a gas placeholder anywhere becomes AE2UD's wrapped stack, so a pattern with gas in it
+  works again. The gas parts and the gas interface become the AE2UD part or interface they were copies of,
+  with their filters, and the parts that worked only with gas still do; the gas wireless terminal becomes
+  AE2UD's, showing gas. A gas interface stocks what its tanks used to hold, four buckets and four times more
+  for each capacity card, up to the 32 a slot takes. The old gas storage components become AE2UD's.
 - **Ukrainian translation.** Every name the mod shows is in Ukrainian as well as English. The Japanese and
   Chinese files keep only the names of items that still exist; the new ones show in English there.
 - **Forked from [Mekanism Energistics](https://github.com/AE2-UEL/MekanismEnergistics) and aimed at AE2UD.**

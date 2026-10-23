@@ -40,6 +40,7 @@ import com.mekeng.github.common.me.strategy.GasContainerItemStrategy;
 import com.mekeng.github.common.me.strategy.GasExportStrategy;
 import com.mekeng.github.common.me.strategy.GasHandlerAdapter;
 import com.mekeng.github.common.me.strategy.GasImportStrategy;
+import com.mekeng.github.common.migration.UelGasMigration;
 import com.mekeng.github.common.part.PartP2PGases;
 
 public class CommonProxy {
@@ -59,6 +60,7 @@ public class CommonProxy {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(regHandler);
         ItemAndBlocks.init(regHandler);
+        UelGasMigration.register();
 
         // Here rather than in init: the tunnel's models are registered with it, and have to be before baking.
         this.gasTunnel = AEApi.instance().registries().p2pTunnel().registerTunnelType("GAS",
