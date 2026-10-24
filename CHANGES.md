@@ -9,7 +9,7 @@ first appeared.
   standard AE2 or AE2 Unofficial Extended Life.
 - Back up the world before installing or updating the mod.
 
-## Unreleased
+## 1.0.0 - 2026-10-24
 
 - **Gas is a kind of content an ME network holds.** It is registered with AE2UD the way blocks and items are
   registered with the game, so everything that was written to carry any kind of content carries gas without
