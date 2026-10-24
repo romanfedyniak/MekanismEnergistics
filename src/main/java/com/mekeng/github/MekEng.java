@@ -15,11 +15,7 @@ import com.mekeng.github.proxy.CommonProxy;
         dependencies = MekEng.DEPENDENCIES)
 public class MekEng {
 
-    /**
-     * No version on AE2UD: the fork shares its mod id with AE2 and AE2UEL, and the version range that tells
-     * them apart waits for AE2UD's first release. See CHANGES.md.
-     */
-    static final String DEPENDENCIES = "required-after:appliedenergistics2;required-after:mekanism;after:jei";
+    static final String DEPENDENCIES = "required-after:appliedenergistics2@[1.6.0,);required-after:mekanism;after:jei";
 
     public static final String MODID = Tags.MOD_ID;
 

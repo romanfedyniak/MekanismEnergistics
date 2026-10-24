@@ -80,5 +80,5 @@ first appeared.
   on Mekanism's tube, never changed which gas the tube got from this mod's own tanks, so it goes too.
 - **Baubles and Mouse Tweaks are no longer copied into this repository.** Their API files were part of the
   source tree; they are ordinary compile-time dependencies now.
-- **No version range on AE2UD yet.** AE2UD shares its mod id with AE2 and AE2 UEL, so only a version range
-  tells them apart, and the range cannot be written until AE2UD's first release.
+- **Requires AE2UD 1.6.0 or newer.** AE2UD shares its mod id with AE2 and AE2 UEL, so the version range is
+  what keeps the game from starting with either of them in its place.
